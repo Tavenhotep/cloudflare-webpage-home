@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Senior Customer Engineer - Interview Preparation & Architecture Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F38020'><path d='M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z'/></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="brand-section">
+      <svg class="cf-cloud-logo" viewBox="0 0 24 24">
+        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+      </svg>
+      <div class="brand-text">
+        <h1>
+          Cloudflare CE Prep Portal 
+          <a href="https://job-boards.greenhouse.io/cloudflare/jobs/7778747?gh_jid=7778747" target="_blank" rel="noopener noreferrer" class="badge-orange-link" title="Click to view live job posting on Greenhouse">
+            Req #7778747 ↗
+          </a>
+        </h1>
+        <div class="brand-subtitle">Enterprise Candidate Preparation & Architecture Portal | Calgary, AB</div>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="globalSearchInput" class="search-input" placeholder="Search questions, protocols, BGP, SASE...">
+      </div>
+      <a href="https://job-boards.greenhouse.io/cloudflare/jobs/7778747?gh_jid=7778747" target="_blank" rel="noopener noreferrer" class="action-btn" title="Open Job Requisition">
+        🌐 View Job Posting ↗
+      </a>
+      <button class="action-btn" onclick="window.print()">🖨️ Print / PDF</button>
+      <button class="theme-toggle-btn" id="themeToggleBtn">
+        <span>☀️ Light Mode</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- Candidate Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-grid">
+        <div class="candidate-header" id="candidateHeader">
+          <!-- Populated by app.js with active clickable links -->
+        </div>
+        <div class="hero-stats-card">
+          <div class="stats-grid" id="heroStatsGrid">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Navigation Tabs (Clickable Anchors with URL Hash Synchronization) -->
+    <nav class="main-tabs-container">
+      <ul class="tab-nav">
+        <li>
+          <a href="#dashboardTab" class="tab-btn active" data-tab="dashboardTab">
+            📊 Executive Briefing & Match
+          </a>
+        </li>
+        <li>
+          <a href="#techDeepDiveTab" class="tab-btn" data-tab="techDeepDiveTab">
+            🌐 Cloudflare Tech Stack
+          </a>
+        </li>
+        <li>
+          <a href="#battlecardsTab" class="tab-btn" data-tab="battlecardsTab">
+            ⚔️ Competitive Battlecards
+          </a>
+        </li>
+        <li>
+          <a href="#interviewStagesTab" class="tab-btn" data-tab="interviewStagesTab">
+            🗺️ 5-Round Interview Strategy
+          </a>
+        </li>
+        <li>
+          <a href="#flashcardsTab" class="tab-btn" data-tab="flashcardsTab">
+            ⚡ Flashcards & Drills <span class="tab-badge" id="masteredProgressText">0/20 Mastered</span>
+          </a>
+        </li>
+        <li>
+          <a href="#mockInterviewTab" class="tab-btn" data-tab="mockInterviewTab">
+            🎯 Mock Interview Q&A
+          </a>
+        </li>
+        <li>
+          <a href="#troubleshootingTab" class="tab-btn" data-tab="troubleshootingTab">
+            🔧 Troubleshooting Lab
+          </a>
+        </li>
+        <li>
+          <a href="#blueprintsTab" class="tab-btn" data-tab="blueprintsTab">
+            📐 Architecture Blueprints
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- TAB 1: Dashboard & Match Matrix -->
+    <div class="tab-content active" id="dashboardTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🎯 Candidate Alignment Scorecard</h2>
+          <p class="section-desc">
+            Direct 1:1 mapping between Senior Systems Engineer candidate competencies (Arista, Cisco, Canadian Forces, AI) and Cloudflare's Senior Customer Engineer core competencies. Click any link to jump directly to the deep dive or official Cloudflare documentation.
+          </p>
+        </div>
+        <a href="https://job-boards.greenhouse.io/cloudflare/jobs/7778747?gh_jid=7778747" target="_blank" rel="noopener noreferrer" class="action-btn">
+          📄 Greenhouse Req #7778747 ↗
+        </a>
+      </div>
+
+      <div style="overflow-x: auto; margin-bottom: 2rem;">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Cloudflare Core Requirement & Docs</th>
+              <th>Candidate Technical Track Record & Experience</th>
+              <th style="text-align: center;">Fit Rating</th>
+              <th>Recommended Interview Framing</th>
+            </tr>
+          </thead>
+          <tbody id="alignmentMatrixBody">
+            <!-- Populated dynamically by app.js with click-through links -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Quick Briefing Summary -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span>🏆 Core Candidate Advantages for Cloudflare</span>
+          </div>
+          <ul style="padding-left: 20px; font-size: 0.88rem; color: var(--text-main); line-height: 1.6;">
+            <li>
+              <strong>Calgary Local with Western Canada Dominance:</strong> Based in Calgary with deep relationships across Alberta oil & gas, education/universities, banking/credit unions, and provincial government.
+              <a href="https://job-boards.greenhouse.io/cloudflare/jobs/7778747?gh_jid=7778747" target="_blank" rel="noopener noreferrer" style="margin-left: 6px; font-size: 0.8rem;">(View Req #7778747 ↗)</a>
+            </li>
+            <li>
+              <strong>Proven Zero Trust Track Record:</strong> Architect of landmark enterprise Zero Trust migrations. Knows exactly how to migrate financial institutions off legacy VPNs to modern SASE.
+              <a href="#battlecardsTab" onclick="window.switchTab('battlecardsTab')" style="margin-left: 6px; font-size: 0.8rem;">(View Zscaler Battlecard ➔)</a>
+            </li>
+            <li>
+              <strong>Carrier-Grade Internet Mastery:</strong> 24 years at Cisco, CCIE, ISP Dial, BGP, Segment Routing (SRv6), MPLS, and optical transport for Tier-1 Canadian carriers.
+              <a href="#techDeepDiveTab" onclick="window.switchTab('techDeepDiveTab')" style="margin-left: 6px; font-size: 0.8rem;">(View Anycast Architecture ➔)</a>
+            </li>
+            <li>
+              <strong>AI-Native Customer Engineer:</strong> Hands-on builder with LLM orchestration, Harnesses, Model Context Protocol (MCP), and agentic workflows to automate RFPs and telemetry.
+              <a href="https://developers.cloudflare.com/ai-gateway/" target="_blank" rel="noopener noreferrer" style="margin-left: 6px; font-size: 0.8rem;">(View Cloudflare AI Gateway ↗)</a>
+            </li>
+            <li>
+              <strong>Boardroom & C-Level Presence:</strong> Executive MBA, Cisco Hall of Fame Sales member, Chairman's Club winner. Speaks both deep packet architecture and business ROI.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>❓ High-Value Questions to Ask Cloudflare</span>
+          </div>
+          <div id="questionsForTimContainer">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Cloudflare Technology Stack Deep Dive -->
+    <div class="tab-content" id="techDeepDiveTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🌐 Cloudflare Edge Architecture & Product Deep Dive</h2>
+          <p class="section-desc">
+            Deep technical architecture guides on Cloudflare's core pillars with direct click-throughs to official Cloudflare developer documentation and interactive practice modules.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" id="techDeepDiveContainer">
+        <!-- Populated dynamically by app.js with external docs & internal links -->
+      </div>
+    </div>
+
+    <!-- TAB 3: Competitive Battlecards -->
+    <div class="tab-content" id="battlecardsTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">⚔️ Competitive Battlecards: Cloudflare vs Legacy & SASE Vendors</h2>
+          <p class="section-desc">
+            How to decisively win against Zscaler, Palo Alto Networks, Fortinet, and Akamai during technical discovery and architectural shootouts, leveraged by real-world enterprise pre-sales experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2" id="battlecardsContainer">
+        <!-- Populated by app.js with comparison links -->
+      </div>
+    </div>
+
+    <!-- TAB 4: 5-Stage Interview Process Strategy -->
+    <div class="tab-content" id="interviewStagesTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🗺️ 5-Round Interview Strategy & Playbook</h2>
+          <p class="section-desc">
+            Step-by-step navigation through the entire Cloudflare hiring process—from the initial Recruiter Screen to the technical architecture whiteboard and "The Orange Cloud" cultural round.
+          </p>
+        </div>
+      </div>
+
+      <div id="interviewStagesContainer">
+        <!-- Populated by app.js -->
+      </div>
+    </div>
+
+    <!-- TAB 5: Interactive Flashcards & Drills -->
+    <div class="tab-content" id="flashcardsTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">⚡ Interactive Technical Flashcards & Drills</h2>
+          <p class="section-desc">
+            Test and sharpen your recall on Anycast, Cloudflare One, MTU clamping, 5xx status codes, and consultative sales methodology. Click card or press <strong>Space</strong> to flip; use <strong>Arrow keys</strong> to navigate. Click through to official documentation on each card.
+          </p>
+        </div>
+      </div>
+
+      <div class="flashcard-controls">
+        <div class="category-filter-bar" id="cardCategoryFilters">
+          <!-- Populated by app.js -->
+        </div>
+        <button class="action-btn" id="toggleMasteredBtn">⭐ Mark as Mastered</button>
+      </div>
+
+      <div class="flashcard-scene">
+        <div class="flashcard" id="activeFlashcard">
+          <!-- Front Face -->
+          <div class="flashcard-face flashcard-front">
+            <div class="card-top-bar">
+              <span class="card-badge badge-orange" id="cardCategoryText">Category</span>
+              <span class="card-num-indicator" id="cardCounterIndicator">Card 1 of 20</span>
+            </div>
+            <div class="card-question-text" id="cardQuestionText">
+              Loading question...
+            </div>
+            <div class="card-bottom-bar">
+              <span>Press Space or Click to Reveal Answer</span>
+              <span class="flip-prompt">🔄 Flip Card</span>
+            </div>
+          </div>
+
+          <!-- Back Face -->
+          <div class="flashcard-face flashcard-back">
+            <div class="card-top-bar">
+              <span class="card-badge badge-green">Answer & Analysis</span>
+              <span class="card-num-indicator">Cloudflare Architecture</span>
+            </div>
+            <div class="card-answer-text" id="cardAnswerText">
+              Loading answer...
+            </div>
+            <div id="cardTakeawayText" style="font-size: 0.85rem; color: var(--cf-orange); margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 8px;">
+            </div>
+            <div class="card-bottom-bar">
+              <span>Click to Flip Back</span>
+              <span class="flip-prompt">🔄 Flip</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard-deck-nav">
+        <button class="deck-nav-btn" id="prevCardBtn" title="Previous Card (Left Arrow)">◀</button>
+        <button class="deck-nav-btn" id="nextCardBtn" title="Next Card (Right Arrow)">▶</button>
+      </div>
+    </div>
+
+    <!-- TAB 6: Mock Interview Simulator -->
+    <div class="tab-content" id="mockInterviewTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🎯 Mock Interview Practice Simulator</h2>
+          <p class="section-desc">
+            Real questions asked in Cloudflare Customer Engineer interviews. Practice delivering crisp, high-impact 2-minute answers using the built-in timer. Click external references to read official Cloudflare articles on each topic.
+          </p>
+        </div>
+      </div>
+
+      <!-- Practice Timer Bar -->
+      <div class="interview-tool-bar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="timer-box">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Pacing Timer:</span>
+            <span class="timer-display" id="timerDisplay">02:00</span>
+          </div>
+          <button class="action-btn" id="timerToggleBtn">▶️ Start</button>
+          <button class="action-btn" id="timerResetBtn">🔄 Reset</button>
+        </div>
+        <div style="font-size: 0.82rem; color: var(--text-dim);">
+          💡 Aim for 90 to 120 seconds per answer: Situation -> Architectural Decision -> Measurable Business Outcome.
+        </div>
+      </div>
+
+      <div id="mockInterviewList">
+        <!-- Populated by app.js with documentation links & practice timers -->
+      </div>
+    </div>
+
+    <!-- TAB 7: Troubleshooting Lab -->
+    <div class="tab-content" id="troubleshootingTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🔧 Cloudflare 5xx Error Diagnostic Lab</h2>
+          <p class="section-desc">
+            Customer Engineers must be master troubleshooters under pressure. Click through the error codes below for root cause analysis, exact CLI diagnostic commands, and direct links to official Cloudflare troubleshooting documentation.
+          </p>
+        </div>
+      </div>
+
+      <div class="error-tabs" id="errorTabsNav">
+        <!-- Populated by app.js -->
+      </div>
+
+      <div class="trouble-detail-card" id="errorDetailCard">
+        <!-- Populated by app.js -->
+      </div>
+    </div>
+
+    <!-- TAB 8: Architecture Blueprints -->
+    <div class="tab-content" id="blueprintsTab">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">📐 Enterprise Architecture Blueprints</h2>
+          <p class="section-desc">
+            Visual reference diagrams for whiteboarding during Stage 4 of the interview: Cloudflare One SASE migration, Magic Transit DDoS protection, and Keyless SSL banking architecture.
+          </p>
+        </div>
+      </div>
+
+      <!-- Blueprint 1: Cloudflare One Hybrid Enterprise Migration -->
+      <div class="blueprint-card">
+        <div class="card-title">
+          <span>🏛️ Blueprint 1: Financial / Enterprise Zero Trust Migration (Reference Blueprint)</span>
+          <div style="display: flex; gap: 8px;">
+            <a href="https://developers.cloudflare.com/cloudflare-one/architecture/" target="_blank" rel="noopener noreferrer" class="external-doc-link">
+              📚 Reference Architecture Docs ↗
+            </a>
+            <span class="card-badge badge-blue">Cloudflare One</span>
+          </div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+          How an Enterprise Customer Engineer architects a zero trust migration for an enterprise with 50+ branches and 3,000 hybrid workers from expensive MPLS and legacy VPN concentrators to Cloudflare Magic WAN + Cloudflare Access.
+        </p>
+
+        <div class="blueprint-diagram">
++----------------------------------------------------------------------------------------------------+
+|                                 ENTERPRISE EDGE TRANSFORMATION BLUEPRINT                           |
++----------------------------------------------------------------------------------------------------+
+
+ [ REMOTE / HYBRID WORKERS ]                [ BRANCH OFFICES (50 Sites) ]
+  - Laptops / Mobile Devices                 - Dual Commodity Broadband (Internet)
+  - Cloudflare WARP Client (WireGuard)       - Existing Edge Router / CPE
+          |                                            |
+          | WireGuard Encrypted                        | Anycast GRE / IPsec Tunnels
+          v                                            v
++----------------------------------------------------------------------------------------------------+
+|                         CLOUDFLARE GLOBAL ANYCAST EDGE (330+ Cities)                               |
+|                                                                                                    |
+|  [ MAGIC WAN ] <---> [ CLOUDFLARE GATEWAY ] <---> [ CLOUDFLARE ACCESS (ZTNA) ]                     |
+|  * Anycast GRE/IPsec   * Outbound SWG & DNS Filter  * Identity-Aware Reverse Proxy (Okta/Azure AD) |
+|  * Auto MSS Clamping   * DLP & Remote Browser Isol. * Device Posture Validation (CrowdStrike)       |
+|  * Magic Firewall L4   * Full TLS Inspection        * Zero Open Inbound Ports                       |
+|                                                                                                    |
+|                     [ ARGO SMART ROUTING & PRIVATE FIBER BACKBONE ]                                |
++----------------------------------------------------------------------------------------------------+
+                 |                                                |
+                 | Outbound-only TLS Tunnel                       | Magic WAN Anycast Direct
+                 | ('cloudflared' Daemon)                         | Tunnel Interconnect
+                 v                                                v
+    +---------------------------+                    +---------------------------+
+    |   AWS / AZURE CLOUD VPC   |                    | ON-PREM DATA CENTER (HQ)  |
+    |  - Internal Microservices |                    |  - Core Banking / ERP     |
+    |  - Zero Public Inbound IPs|                    |  - Active Directory / HSM |
+    |  - No VPN Concentrators   |                    |  - Keyless SSL Key Server |
+    +---------------------------+                    +---------------------------+
+        </div>
+        <div class="talking-point-box">
+          💡 <strong>Whiteboard Narrative:</strong> "Notice that the corporate data center and cloud VPCs have ZERO open inbound firewall ports. Inbound attacks are physically impossible because traffic is pulled via outbound-only 'cloudflared' tunnels. Branch offices route directly to Cloudflare via Anycast GRE, cutting MPLS costs by over 50% while improving latency."
+        </div>
+        <div style="margin-top: 10px; display: flex; gap: 10px;">
+          <button class="click-through-btn" onclick="window.switchTab('battlecardsTab')">
+            ⚔️ Review Zscaler Battlecard ➔
+          </button>
+          <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/" target="_blank" rel="noopener noreferrer" class="external-doc-link">
+            📖 'cloudflared' Tunnel Guide ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Blueprint 2: Magic Transit DDoS Scrubbing -->
+      <div class="blueprint-card">
+        <div class="card-title">
+          <span>🛡️ Blueprint 2: Magic Transit & BGP Anycast DDoS Mitigation</span>
+          <div style="display: flex; gap: 8px;">
+            <a href="https://developers.cloudflare.com/magic-transit/" target="_blank" rel="noopener noreferrer" class="external-doc-link">
+              📚 Magic Transit Docs ↗
+            </a>
+            <span class="card-badge badge-orange">Layer 3/4 Protection</span>
+          </div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+          How Cloudflare protects customer IP subnets (/24 or larger) from multi-terabit volumetric attacks without latency-inducing scrubbing centers.
+        </p>
+
+        <div class="blueprint-diagram">
+           [ MALICIOUS ACTOR / BOTNET ]                       [ LEGITIMATE USERS / CLIENTS ]
+             (800 Gbps SYN/UDP Flood)                            (Normal TCP / Web Traffic)
+                        \                                                    /
+                         \                                                  /
+                          v                                                v
+            +------------------------------------------------------------------------------------+
+            |                          GLOBAL INTERNET ROUTING (BGP)                             |
+            |   Cloudflare announces Customer /24 IP Prefix from ALL 330+ Cities via BGP Anycast |
+            +------------------------------------------------------------------------------------+
+                                                      |
+                                                      v
+            +------------------------------------------------------------------------------------+
+            |                       CLOUDFLARE ANYCAST EDGE DATA CENTERS                         |
+            |                                                                                    |
+            |   [ POP 1: Calgary ]               [ POP 2: Seattle ]            [ POP 3: Frankfurt]  |
+            |   Absorbs 4 Gbps                   Absorbs 8 Gbps                Absorbs 12 Gbps       |
+            |          |                                |                             |          |
+            |   [ GATEBOT & XDP/eBPF ]           [ GATEBOT & XDP/eBPF ]        [ GATEBOT & eBPF ]|
+            |   Drops volumetric attack          Drops volumetric attack       Drops attack      |
+            |   at NIC line-rate (0ms)           at NIC line-rate              at NIC line-rate  |
+            |                                                                                    |
+            |                     >>> ONLY CLEAN, FILTERED TRAFFIC REMAINS <<<                   |
+            +------------------------------------------------------------------------------------+
+                                                      |
+                                                      | Clean Packets Encapsulated via
+                                                      | Anycast GRE / IPsec or Cloudflare Network
+                                                      | Interconnect (CNI)
+                                                      v
+                                      +-------------------------------+
+                                      | CUSTOMER ON-PREM DATA CENTER  |
+                                      |   - Edge Routers & Servers    |
+                                      |   - Normal, Uninterrupted Op  |
+                                      +-------------------------------+
+        </div>
+        <div class="talking-point-box">
+          💡 <strong>Whiteboard Narrative:</strong> "Unlike legacy DDoS vendors who divert traffic to centralized 'scrubbing centers' causing massive latency spikes, Cloudflare absorbs volumetric attacks locally using Gatebot and eBPF at line rate on the NIC. The customer's on-prem router only receives clean, decapsulated packets via Anycast GRE."
+        </div>
+        <div style="margin-top: 10px; display: flex; gap: 10px;">
+          <button class="click-through-btn" onclick="window.switchTab('mockInterviewTab', 'accordion-q7')">
+            🎯 Practice DDoS Mitigation Scenario (Q7) ➔
+          </button>
+          <a href="https://blog.cloudflare.com/how-cloudflare-mitigates-bgp-leaks/" target="_blank" rel="noopener noreferrer" class="external-doc-link">
+            📖 BGP Route Leak Mitigation Blog ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div style="margin-bottom: 6px;">
+      <strong>Cloudflare Senior Customer Engineer Learning & Interview Preparation Portal</strong>
+    </div>
+    <div style="margin-bottom: 8px;">
+      Target Role: <strong>Senior Customer Engineer</strong> | 
+      Requisition: <a href="https://job-boards.greenhouse.io/cloudflare/jobs/7778747?gh_jid=7778747" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--cf-orange);">Cloudflare Greenhouse #7778747 ↗</a> | 
+      Location: Calgary, AB, Canada
+    </div>
+    <div style="font-size: 0.75rem; color: var(--text-dim);">
+      Direct Links: 
+      <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare.com ↗</a> &bull; 
+      <a href="https://developers.cloudflare.com" target="_blank" rel="noopener noreferrer">Developer Docs ↗</a> &bull; 
+      <a href="https://blog.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare Blog ↗</a> &bull; 
+      <a href="https://www.cloudflare.com/learning/" target="_blank" rel="noopener noreferrer">Learning Center ↗</a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
