@@ -1,4 +1,4 @@
-# Cloudflare Senior Customer Engineer — Public Interview Preparation & Architecture Portal
+# Cloudflare Senior Customer Engineer — Interview Preparation & Architecture Portal
 **Target Requisition:** [Cloudflare Senior Customer Engineer (Greenhouse #7778747)](https://job-boards.greenhouse.io/cloudflare/jobs/7778747?gh_jid=7778747)  
 **Location:** Calgary, AB, Canada  
 **Focus:** Enterprise Solutions Architecture, Zero Trust / SASE (Cloudflare One), Anycast Edge, and Pre-Sales Technical Leadership
@@ -41,28 +41,18 @@ This preparation portal maps an elite Enterprise Customer Engineer track record 
    - **Cloudflare vs Palo Alto Networks:** Calling out VM-series firewall sprawl in AWS vs Cloudflare's bare-metal Anycast edge.
    - **Cloudflare vs Fortinet:** Hardware appliance sprawl and firmware patching nightmare vs cloud-native SASE.
    - **Cloudflare vs Akamai:** Modern programmable edge vs 1990s legacy CDN.
-4. **5-Stage Interview Process Playbook:**
-   - Stage 1: Recruiter Screen (30 mins)
-   - Stage 2: Hiring Manager Screen (45 mins)
-   - Stage 3: Deep Technical Architecture & Systems Design (60 mins)
-   - Stage 4: Technical Whiteboard / Mock Customer Discovery & PoC (60 mins)
-   - Stage 5: "The Orange Cloud" Cultural Round (Principled, Curious, Transparent)
-5. **Interactive Flashcards & Drills:**
+4. **Interactive Flashcards & Drills:**
    - 20+ comprehensive technical and sales engineering flashcards.
    - Category filtering, flip animations, keyboard hotkeys (`Space` to flip, `Arrow keys` to navigate), and "Mark as Mastered" progress tracker.
-6. **Mock Interview Simulator with Built-in 2-Minute Timer:**
-   - Real-world questions reported from Cloudflare Customer Engineer interviews.
-   - Tailored talking points highlighting specific technical wins.
-   - Full model answers and built-in practice timer for answer pacing.
-7. **Interactive Troubleshooting Diagnostic Lab:**
+5. **Interactive Troubleshooting Diagnostic Lab:**
    - Deep diagnostic guides for Cloudflare Error Codes: **520, 521, 522, 523, 524, 525, 526**.
    - Includes real CLI diagnostic commands (`curl`, `openssl`, `tcpdump`, `systemctl`).
-8. **Enterprise Architecture Blueprints:**
-   - Text/ASCII visual architectural diagrams for whiteboarding: Hybrid Zero Trust enterprise migration and Magic Transit DDoS mitigation.
-9. **Reverse Interview Questions:**
+6. **Enterprise Architecture Blueprints:**
+   - ASCII visual architectural diagrams for whiteboarding: Hybrid Zero Trust enterprise migration and Magic Transit DDoS mitigation.
+7. **Reverse Interview Questions:**
    - High-caliber questions for candidates to ask directors and hiring managers to establish immediate senior authority.
-10. **One-Click Print / PDF Export & Dark/Light Mode:**
-    - Full offline capability, zero dependencies, no Node/npm required.
+8. **One-Click Print / PDF Export & Dark/Light Mode:**
+   - Full offline capability, zero dependencies, no Node/npm required.
 
 ---
 
@@ -74,7 +64,7 @@ G:\AI Antigravity\
 └── cloudflare-ce-prep\
     ├── index.html                <-- Portal frontend single-page application
     ├── styles.css                <-- Cloudflare-inspired dark/light theme
-    ├── app.js                    <-- Dynamic interaction, timer, flashcard & test engine
-    ├── data.js                   <-- Comprehensive dataset, questions, battlecards & guides
+    ├── app.js                    <-- Dynamic interaction, flashcard engine & navigation
+    ├── data.js                   <-- Comprehensive dataset, battlecards & guides
     └── start.bat                 <-- Local launcher
 ```

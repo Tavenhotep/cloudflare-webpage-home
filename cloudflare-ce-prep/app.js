@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Cloudflare Senior Customer Engineer - Interview Preparation Portal
  * Core Interactive Application Logic with Full Click-Through Navigation
  * Public Edition
@@ -10,11 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAlignmentMatrix();
   renderTechDeepDive();
   renderCompetitiveBattlecards();
-  renderInterviewStages();
   renderTroubleshootingTree();
   renderQuestionsForTim();
   initFlashcardDeck();
-  initMockInterviewSimulator();
   initGlobalSearch();
   initNavigationTabs();
   handleUrlHashRouting();
@@ -26,9 +24,6 @@ const state = {
   activeFlashcards: [...PREP_DATA.flashcards],
   currentCategory: "All",
   masteredCards: JSON.parse(localStorage.getItem("cf_mastered_cards") || "[]"),
-  timerInterval: null,
-  timerSecondsRemaining: 120,
-  isTimerRunning: false
 };
 
 // Global Tab Switcher accessible from any click-through link or button
@@ -81,8 +76,8 @@ function handleUrlHashRouting() {
   if (hash) {
     const validTabs = [
       "dashboardTab", "techDeepDiveTab", "battlecardsTab", 
-      "interviewStagesTab", "flashcardsTab", "mockInterviewTab", 
-      "troubleshootingTab", "blueprintsTab"
+      "dashboardTab", "techDeepDiveTab", "battlecardsTab",
+      "flashcardsTab", "troubleshootingTab", "blueprintsTab"
     ];
     if (validTabs.includes(hash)) {
       window.switchTab(hash);
@@ -379,47 +374,11 @@ function renderCompetitiveBattlecards() {
       </div>
 
       <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
-        <button class="click-through-btn" onclick="window.switchTab('mockInterviewTab', 'accordion-q4')">
+        <button class="click-through-btn" onclick="window.switchTab('troubleshootingTab')">
           🎯 Practice Objection Handling (Q4) ➔
         </button>
         <button class="click-through-btn" onclick="window.switchTab('blueprintsTab')">
           📐 Migration Architecture ➔
-        </button>
-      </div>
-    </div>
-  `).join("");
-}
-
-// Render Interview Stages with Click-Throughs
-function renderInterviewStages() {
-  const container = document.getElementById("interviewStagesContainer");
-  if (!container) return;
-
-  container.innerHTML = PREP_DATA.interviewStages.map((st, idx) => `
-    <div class="card" style="margin-bottom: 1rem; border-left: 4px solid var(--cf-orange);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
-        <h3 style="font-size: 1.15rem; color: #fff; font-weight: 700;">${st.stage}</h3>
-        <div style="display: flex; gap: 8px; align-items: center;">
-          <span class="card-badge badge-orange">⏱️ ${st.duration}</span>
-          <span class="card-badge badge-blue">👤 ${st.interviewer}</span>
-        </div>
-      </div>
-      <p style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 10px;"><strong>Objective:</strong> ${st.objective}</p>
-      
-      <div style="background: var(--bg-tertiary); padding: 10px 14px; border-radius: var(--radius-sm); margin-bottom: 10px;">
-        <strong style="font-size: 0.8rem; color: var(--cf-orange); text-transform: uppercase;">Core Evaluation Themes:</strong>
-        <ul style="padding-left: 20px; font-size: 0.84rem; color: var(--text-muted); margin-top: 4px;">
-          ${st.keyThemes.map(t => `<li>${t}</li>`).join("")}
-        </ul>
-      </div>
-
-      <div class="talking-point-box">
-        🎯 <strong>Winning Strategy:</strong> ${st.strategy || st.timStrategy}
-      </div>
-
-      <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
-        <button class="click-through-btn" onclick="window.switchTab('${st.actionTab}')">
-          ${st.actionLabel}
         </button>
       </div>
     </div>
@@ -572,139 +531,6 @@ function initFlashcardDeck() {
   showCard(0);
 }
 
-// Mock Interview Simulator Logic
-function initMockInterviewSimulator() {
-  const container = document.getElementById("mockInterviewList");
-  if (!container) return;
-
-  container.innerHTML = PREP_DATA.mockInterviewQuestions.map((q, idx) => `
-    <div class="question-accordion" id="accordion-${q.id}">
-      <div class="accordion-header" onclick="toggleAccordion('${q.id}')">
-        <div class="accordion-title-group">
-          <span class="card-badge badge-orange">${q.category}</span>
-          <span class="accordion-title">${idx + 1}. ${q.title}</span>
-        </div>
-        <span class="accordion-icon" id="icon-${q.id}" style="color: var(--cf-orange); font-size: 1.2rem;">▼</span>
-      </div>
-      <div class="accordion-body" id="body-${q.id}">
-        <div class="question-prompt">
-          "${q.question}"
-        </div>
-        
-        <div style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 12px;">
-          🎯 <strong>What Interviewers Are Listening For:</strong> ${q.whatInterviewerLooksFor}
-        </div>
-
-        <div class="talking-points-panel">
-          <h4>💡 Model Candidate Talking Points</h4>
-          <ul>
-            ${(q.talkingPoints || q.timTalkingPoints || []).map(pt => `<li>${pt}</li>`).join("")}
-          </ul>
-        </div>
-
-        <div class="model-answer-panel">
-          <h4>🏆 Comprehensive Model Answer</h4>
-          <div class="model-answer-content">${q.modelAnswer}</div>
-        </div>
-
-        ${q.docReference ? `
-          <div style="margin-bottom: 12px;">
-            <a href="${q.docReference.url}" target="_blank" rel="noopener noreferrer" class="external-doc-link">
-              📖 Reference: ${q.docReference.title} ↗
-            </a>
-          </div>
-        ` : ""}
-
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 8px;">
-          <span style="font-size: 0.8rem; color: var(--text-dim);">Practice with timer & test your verbal flow</span>
-          <button class="action-btn" onclick="startPracticeTimer('${q.title.replace(/'/g, "\\'")}')">
-            ⏱️ Start 2-Minute Practice Timer
-          </button>
-        </div>
-      </div>
-    </div>
-  `).join("");
-
-  // Setup Timer Controls
-  initTimer();
-}
-
-// Global toggle for accordions
-window.toggleAccordion = function(id) {
-  const body = document.getElementById(`body-${id}`);
-  const icon = document.getElementById(`icon-${id}`);
-  if (body) {
-    const isOpen = body.classList.toggle("open");
-    if (icon) icon.textContent = isOpen ? "▲" : "▼";
-  }
-};
-
-// Timer Logic
-function initTimer() {
-  const display = document.getElementById("timerDisplay");
-  const toggleBtn = document.getElementById("timerToggleBtn");
-  const resetBtn = document.getElementById("timerResetBtn");
-
-  function updateTimerText() {
-    const mins = Math.floor(state.timerSecondsRemaining / 60);
-    const secs = state.timerSecondsRemaining % 60;
-    if (display) {
-      display.textContent = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-    }
-  }
-
-  function startTimer() {
-    if (state.timerInterval) clearInterval(state.timerInterval);
-    state.isTimerRunning = true;
-    if (toggleBtn) toggleBtn.textContent = "⏸️ Pause";
-
-    state.timerInterval = setInterval(() => {
-      if (state.timerSecondsRemaining > 0) {
-        state.timerSecondsRemaining--;
-        updateTimerText();
-      } else {
-        clearInterval(state.timerInterval);
-        state.isTimerRunning = false;
-        if (toggleBtn) toggleBtn.textContent = "▶️ Start";
-        alert("⏱️ 2-Minute Interview Timer Complete! Review your pacing and clarity.");
-      }
-    }, 1000);
-  }
-
-  function pauseTimer() {
-    clearInterval(state.timerInterval);
-    state.isTimerRunning = false;
-    if (toggleBtn) toggleBtn.textContent = "▶️ Start";
-  }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      if (state.isTimerRunning) {
-        pauseTimer();
-      } else {
-        startTimer();
-      }
-    });
-  }
-
-  if (resetBtn) {
-    resetBtn.addEventListener("click", () => {
-      pauseTimer();
-      state.timerSecondsRemaining = 120;
-      updateTimerText();
-    });
-  }
-
-  window.startPracticeTimer = function(title) {
-    pauseTimer();
-    state.timerSecondsRemaining = 120;
-    updateTimerText();
-    startTimer();
-    window.scrollTo({ top: 300, behavior: "smooth" });
-  };
-
-  updateTimerText();
-}
 
 // Render Troubleshooting Diagnostic Tree with Links
 function renderTroubleshootingTree() {
@@ -748,8 +574,8 @@ function renderTroubleshootingTree() {
       </div>
 
       <div style="margin-top: 14px; display: flex; justify-content: flex-end; gap: 10px;">
-        <button class="click-through-btn" onclick="window.switchTab('mockInterviewTab', 'accordion-q3')">
-          🎯 Practice Live 502/504 Crisis Scenario (Q3) ➔
+        <button class="click-through-btn" onclick="window.switchTab('troubleshootingTab')">
+          Explore Troubleshooting Reference
         </button>
       </div>
     `;
@@ -796,10 +622,11 @@ function initGlobalSearch() {
     const query = e.target.value.toLowerCase().trim();
     if (!query) return;
 
-    window.switchTab("mockInterviewTab");
+    window.switchTab("flashcardsTab");
 
-    const accordions = document.querySelectorAll(".question-accordion");
-    accordions.forEach(acc => {
+    // Search across visible tab content
+    const cards = document.querySelectorAll(".card, .battlecard, .blueprint-card, .question-accordion");
+    cards.forEach(acc => {
       const text = acc.textContent.toLowerCase();
       if (text.includes(query)) {
         acc.style.display = "block";
