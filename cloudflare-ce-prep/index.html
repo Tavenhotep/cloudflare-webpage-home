@@ -77,18 +77,8 @@
           </a>
         </li>
         <li>
-          <a href="#interviewStagesTab" class="tab-btn" data-tab="interviewStagesTab">
-            🗺️ 5-Round Interview Strategy
-          </a>
-        </li>
-        <li>
           <a href="#flashcardsTab" class="tab-btn" data-tab="flashcardsTab">
             ⚡ Flashcards & Drills <span class="tab-badge" id="masteredProgressText">0/20 Mastered</span>
-          </a>
-        </li>
-        <li>
-          <a href="#mockInterviewTab" class="tab-btn" data-tab="mockInterviewTab">
-            🎯 Mock Interview Q&A
           </a>
         </li>
         <li>
@@ -206,23 +196,7 @@
       </div>
     </div>
 
-    <!-- TAB 4: 5-Stage Interview Process Strategy -->
-    <div class="tab-content" id="interviewStagesTab">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">🗺️ 5-Round Interview Strategy & Playbook</h2>
-          <p class="section-desc">
-            Step-by-step navigation through the entire Cloudflare hiring process—from the initial Recruiter Screen to the technical architecture whiteboard and "The Orange Cloud" cultural round.
-          </p>
-        </div>
-      </div>
-
-      <div id="interviewStagesContainer">
-        <!-- Populated by app.js -->
-      </div>
-    </div>
-
-    <!-- TAB 5: Interactive Flashcards & Drills -->
+    <!-- TAB 4: Interactive Flashcards & Drills -->
     <div class="tab-content" id="flashcardsTab">
       <div class="section-header">
         <div>
@@ -282,38 +256,7 @@
       </div>
     </div>
 
-    <!-- TAB 6: Mock Interview Simulator -->
-    <div class="tab-content" id="mockInterviewTab">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">🎯 Mock Interview Practice Simulator</h2>
-          <p class="section-desc">
-            Real questions asked in Cloudflare Customer Engineer interviews. Practice delivering crisp, high-impact 2-minute answers using the built-in timer. Click external references to read official Cloudflare articles on each topic.
-          </p>
-        </div>
-      </div>
-
-      <!-- Practice Timer Bar -->
-      <div class="interview-tool-bar">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div class="timer-box">
-            <span style="font-size: 0.85rem; color: var(--text-muted);">Pacing Timer:</span>
-            <span class="timer-display" id="timerDisplay">02:00</span>
-          </div>
-          <button class="action-btn" id="timerToggleBtn">▶️ Start</button>
-          <button class="action-btn" id="timerResetBtn">🔄 Reset</button>
-        </div>
-        <div style="font-size: 0.82rem; color: var(--text-dim);">
-          💡 Aim for 90 to 120 seconds per answer: Situation -> Architectural Decision -> Measurable Business Outcome.
-        </div>
-      </div>
-
-      <div id="mockInterviewList">
-        <!-- Populated by app.js with documentation links & practice timers -->
-      </div>
-    </div>
-
-    <!-- TAB 7: Troubleshooting Lab -->
+    <!-- TAB 5: Troubleshooting Lab -->
     <div class="tab-content" id="troubleshootingTab">
       <div class="section-header">
         <div>
@@ -333,13 +276,13 @@
       </div>
     </div>
 
-    <!-- TAB 8: Architecture Blueprints -->
+    <!-- TAB 6: Architecture Blueprints -->
     <div class="tab-content" id="blueprintsTab">
       <div class="section-header">
         <div>
           <h2 class="section-title">📐 Enterprise Architecture Blueprints</h2>
           <p class="section-desc">
-            Visual reference diagrams for whiteboarding during Stage 4 of the interview: Cloudflare One SASE migration, Magic Transit DDoS protection, and Keyless SSL banking architecture.
+            Visual reference diagrams for whiteboarding and enterprise technical discovery: Cloudflare One SASE migration, Magic Transit DDoS protection, and Keyless SSL banking architecture.
           </p>
         </div>
       </div>
@@ -458,8 +401,8 @@
           💡 <strong>Whiteboard Narrative:</strong> "Unlike legacy DDoS vendors who divert traffic to centralized 'scrubbing centers' causing massive latency spikes, Cloudflare absorbs volumetric attacks locally using Gatebot and eBPF at line rate on the NIC. The customer's on-prem router only receives clean, decapsulated packets via Anycast GRE."
         </div>
         <div style="margin-top: 10px; display: flex; gap: 10px;">
-          <button class="click-through-btn" onclick="window.switchTab('mockInterviewTab', 'accordion-q7')">
-            🎯 Practice DDoS Mitigation Scenario (Q7) ➔
+          <button class="click-through-btn" onclick="window.switchTab('troubleshootingTab')">
+            🔧 Open Diagnostic Lab ➔
           </button>
           <a href="https://blog.cloudflare.com/how-cloudflare-mitigates-bgp-leaks/" target="_blank" rel="noopener noreferrer" class="external-doc-link">
             📖 BGP Route Leak Mitigation Blog ↗
